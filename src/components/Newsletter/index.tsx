@@ -43,16 +43,14 @@ const Newsletter = () => {
         const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
         const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
 
-        if (form !== null) {
-            emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
-                .then((result) => {
-                    console.log(result)
-                    alert(`Obrigado pela sua assinatura, você receberá nossas novidades no e-mail ${email}`)
-                    setEmail("")
-                }, (error) => {
-                    console.log(error.text);
-                });
-        }
+        emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
+            .then(() => {
+                alert(`Obrigado pela sua assinatura, você receberá nossas novidades no e-mail ${email}`)
+                setEmail("")
+            }, (error) => {
+                console.error(error.text);
+                alert(error.text);
+            });
 
         
     }
