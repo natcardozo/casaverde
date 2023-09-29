@@ -62,6 +62,7 @@ const Input = ({ children, placeholder, email, setEmail, emailIsValid }: Props) 
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     onFocus={() => setShowMessage(true)}
+                    onBlur={() => setShowMessage(false)}
                     name="user_email"
                 />
             </div>
