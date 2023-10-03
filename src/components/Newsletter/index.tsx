@@ -1,33 +1,10 @@
 import { useState, useRef, MutableRefObject } from "react";
-import styled from "styled-components";
 import emailjs from '@emailjs/browser';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import Button from "../Button";
 import Input from "../Input";
+import { StyledNewsletter } from "./StyledNewsletter";
 import { emailValidation } from "./helpers/emailValidation";
-
-const StyledNewsletter = styled.section`
-    width: 40%;
-    margin: 150px 0;
-    .subtitle {
-        font-size: 22px;
-    }
-    h2 {
-        font-family: Elsie Swash Caps;
-        font-size: 82px;
-        font-weight: 900;
-        margin: 12px 0 24px 0;
-    }
-    p {
-        font-size: 16px;
-        line-height: 24px;
-    }
-    form {
-        display: flex;
-        margin: 24px 0;
-        width: 100%;
-    }
-`
 
 const Newsletter = () => {
     const [email, setEmail] = useState("");
